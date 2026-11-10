@@ -34,7 +34,10 @@ public class Sorts {
      */
     public static boolean isSorted(Task[] a, String field) {
         // TODO
-        return false;
+        for (int i = 1; i < a.length; ++i) {
+            if (less(a[i], a[i-1], field)) return false;
+        }
+        return true;
     }
 
     /**
@@ -47,5 +50,17 @@ public class Sorts {
      */
     public static void bubbleSort(Task[] a, String field) {
         // TODO
+        int endpos = a.length;
+        while (endpos >= 1) {
+            int swaps = 0;
+            for (int i = 1; i < endpos; ++i) {
+                if (less(a[i], a[i-1], field))  {
+                    exchange(a, i, i-1);
+                    ++swaps;
+                }
+            }
+            --endpos;
+            if (swaps == 0) break;
+        }
     }
 }

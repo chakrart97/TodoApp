@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class TodoApp {
 
     public static void main(String[] args) {
-        String fileName = args.length > 0 ? args[0] : "tasks.txt";
+        String fileName = args.length > 0 ? args[0] : "src/task.txt";
         ArrayList<Task> tasks = loadTasks(fileName);
         System.out.println("Loaded " + tasks.size() + " task(s) from " + fileName);
 
